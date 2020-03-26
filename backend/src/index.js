@@ -8,6 +8,7 @@ app.use(cors());            // o aplicativo vai usar cors('site que a aplicaçã
 app.use(express.json());    // Faz com que as requisições que retornam .json sejam entendíveis pelo javascript, daí dá pra fazer o POST/PUT sem retornar undefined
 app.use(routes);            // Usar as rotas declaradas em routes.js
 
+
 /*
     Métodos HTTP (app.[método]):
 
