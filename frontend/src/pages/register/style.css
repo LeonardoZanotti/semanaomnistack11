@@ -1,0 +1,56 @@
+.register-container {       /* primeira div do registro */
+    width: 100%;        /* ocupar 100% da largura disponível */
+    max-width: 1120px;  /* largura máxima total com margin e padding */
+    height: 100vh;      /* 1vh é altura ocupando 1% da altura disponível, 100vh é ocupando toda a altura disponível */
+    margin: 0 auto;     /* Sem margem e centralizado automático */
+
+    display: flex;              /* display flexível permite facilidade em centralizações (as duas parada de baixo ae) e também organiza um ao lado do outro */
+    /* flex-direction: column;  /*   muda a orientação do flex, desse modo os items ficam um em cima do outro */
+    align-items: center;        /* centralização vertical */
+    justify-content: center;    /* centralização horizontal */
+}
+
+.register-container .content {      /* segunda div do registro que tá dentro da primeira */
+    width: 100%;        /* largura total disponível */
+    padding: 96px;      /* espaçamento interno 96 pixels */
+    background: #f0f0f5;    /* cor de fundo */
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);   /* sombra na posição x, y = 0, 0, 100 pixels de blur e cor preta com 0.1 de opacidade (o a é de alfa) */
+    border-radius: 8px;     /* arredondar as bordas */
+
+    display: flex;  /* relativo, display flexível pra poder centralizar e mexer mais fácilmente, literalmente deixa solto */
+    justify-content: space-between;    /* vai separar a section do form, deixando a section na esquerda e o form na direita dando ainda um espaço entre eles */
+    align-items: center;        /* alinha verticalmente */
+}
+
+.register-container .content section {  /* section */
+    width: 100%;        /* ocupar toda a largura máxima disponível */
+    max-width: 380px;   /* largura máxima de 380 px considerando já as margens e paddings */
+}
+
+.register-container .content section h1 {   /* título h1 da section */
+    margin: 64px 0 32px;    /* Margem superior de 64 pixel, inferior de 32 e sem margens laterais */
+    font-size: 32px;        /* tamanho da fonte */
+}
+
+.register-container .content section p {    /* parágrafo da section */
+    font-size: 18px;    /* tamanho da fonte */
+    color: #737380;     /* cor da fonte */
+    line-height: 32px;  /* altura da linha */
+}
+
+.register-container .content form { /* formulário de registro */
+    width: 100%;        /* ocupa toda a largura máxima disponível */
+    max-width: 450px;   /* largura máxima de 450px já com margin e padding*/
+}
+
+.register-container .content form input {   /* pra todos os inputs do formulário */
+    margin-top: 8px;    /* margem superior de 8 pixels */
+}
+
+.register-container .content form .input-group {    /* pra div de cidade e uf */
+    display: flex;  /* flexível, solto, relativo, podendo ocupar a mesma linha, não sendo absoluto */
+}
+
+.register-container .content form .input-group input + input {  /* para os inputs que tenham um input antes, ou seja, dentro da div de cidade e uf, só a uf vai ser afetada por isso */
+    margin-left: 8px;   /* margem esquerda para o input cidade */
+}

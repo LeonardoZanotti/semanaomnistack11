@@ -1,0 +1,87 @@
+.profile-container {    /* div com essa classe */
+    width: 100%;    /* ocupar toda a largura do bloco */
+    max-width: 1180px;  /* largura máxima total com padding e margin*/
+    padding: 0 30px;    /* espaçamento interno lateral de 30 px e sem espaçamento interno superior e inferior */
+    margin: 32px auto;  /* margem superior e inferior de 32 pixels e nas laterais vai ser automática pra centralizar */
+}
+
+.profile-container header {     /* cabeçalho dentro da div */
+    display: flex;      /* display flexível, solto, podendo ocupar mesma linha */
+    align-items: center;    /* centralização vertical */
+}
+
+.profile-container header span {    /* span dentro do cabeçalho */
+    font-size: 20px;        /* tamanho da fonte */
+    margin-left: 24px;      /* margem esquerda */
+}
+
+.profile-container header img {     /* imagem do cabeçalho */
+    height: 64px;       /* altura */
+}
+
+.profile-container header a {   /* Link to dentro do cabeçalho, que é como se fosse um a href só que é melhor */
+    width: 260px;       /* largura */
+    margin-left: auto;      /* Joga o máximo pra direita possível (maior margem esquerda possível) */
+    margin-top: 0;      /* remove a margem que os botões possuem que foi definida no global.css */
+}
+
+.profile-container header button {  /* botão dentro do header */
+    height: 60px;   /* altura */
+    width: 60px;    /* largura */
+    border-radius: 4px; /* borda arredondada */
+    border: 1px solid #dcdce6;  /* borda de 1 px de largura, sólida (absoluta) com aquela cor ali */
+    background: transparent;    /* fundo transparente */
+    margin-left: 16px;  /* margem esquerda */
+    transition: border-color 0.2s;   /* transição no efeito do mouse em cima que leva 0.2 segundos, suavizando ele */
+}
+
+.profile-container header button:hover {    /* efeito aplicado no botão quando o mouse tá em cima dele */
+    border-color: #090909;      /* muda a cor da borda */
+}
+
+.profile-container h1 { /* título h1 */
+    margin-top: 80px;       /* margem superior */
+    margin-bottom: 24px;    /* margem inferior */
+}
+
+.profile-container ul { /* lista não ordenada */
+    display: grid;  /* display em grade, pra poder mostrar em blocos */
+    grid-template-columns: repeat(2, 1fr);  /* ou 1fr 1fr significa que vão ser mostrados em 2 colunas com 1 de tamanho flexível por linha */
+    grid-gap: 24px;     /* distanciamento entre os itens da lista horizontal/vertical */
+    list-style: none;   /* lista sem estilo */
+}
+
+.profile-container ul li { /* list item da lista não ordenada */
+    background: #ffffff;    /* cor de fundo */
+    padding: 24px;      /* espaçamento interno em todas as direções */
+    border-radius: 8px;  /* bordas arredondadas */
+    position: relative;  /* posição relativa, solta, flexível */
+}
+
+
+.profile-container ul li button {      /* botão de cada item da lista */
+    position: absolute;     /* posição absoluta */
+    right: 24px;    /* deslocamento para a direita em 24 px */
+    top: 24px;      /* deslocamento para cima em 24 px */
+    border: 0;      /* sem borda */
+}
+
+.profile-container ul li button:hover {     /* efeito do mouse em cima do botão da lista */
+    opacity: 0.8;       /* reduz a opacidade do botão para 80% */
+}
+
+.profile-container ul li strong {   /* strong dentro dos itens da lista */
+    display: block;     /* mostrar como um bloco absoluto */
+    margin-bottom: 16px;     /* margem inferior */
+    color: #41414d;     /* cor do texto */
+}
+
+.profile-container ul li strong:not(:first-child) /* p + strong */ {    /* para os strongs que não forem o primeiro, ou seja, tenham um parágrafo antes */
+    margin-top: 32px;   /* margem superior */
+}
+
+.profile-container ul li p {    /* parágrafos dos itens da lista */
+    color: #737380;         /* cor do texto */
+    line-height: 21px;      /* altura da linha */
+    font-size: 16px;        /* tamanho da fonte */
+} 

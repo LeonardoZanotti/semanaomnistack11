@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');     /* importando pacote de fontes Roboto do 'google fonts' */
+
+* {         /* Todos os elementos são afetados por isso */
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;         /* Desse modo o padding adicionado já está no tamanho do objeto, tipo uma parada com 200 px e padding de 20 px fica com 160 px e não com 240 px. É tipo setar um tamanho absoluto. */
+}
+
+body {      /* para o body */
+    font: 400 14px Roboto, sans-serif;  /* Fonte com grossura 400, tamanho 14 pixels, por padrão é Roboto mas se não der usa a sans-serif */
+    background: #f0f0f5;            /* cor do fundo */
+    -webkit-font-smoothing: antialiased;        /* dá uma melhoradinha na fonte */
+}
+
+input, button, textarea {           /* para todos os inputs, buttons e textareas */
+    font: 400 18px Roboto, sans-serif;      /* Fonte com grossura 400, tamanho 14 pixels, por padrão é Roboto mas se não der usa a sans-serif */
+}
+
+button {    /* para todos os botões */
+    cursor: pointer;    /* Modifica o cursor do mouse em cima do botão pro ponteiro de clicar */  
+}
+
+form input {        /* todo input de formulário vai ser desse jeito */
+    width: 100%;    /* 100% da largura disponível */
+    height: 60px;   /* altura de 60 px */
+    color: #030303;     /* cor do texto */
+    border: 1px solid #dcdce6;      /* borda de 1px sólida (absoluta) com cor */
+    border-radius: 8px;     /* cantos arredondados */
+    padding: 0 24px;    /* padding superior e inferior é 0 e os laterais são de 24px */
+}
+
+form textarea {        /* todo textarea de formulário vai ser desse jeito */
+    width: 100%;    /* 100% da largura disponível */
+    min-height: 140px;   /* altura mínima de 140 px */
+    resize: vertical;   /* Só permite mudar o tamanho verticalmente */
+    color: #030303;     /* cor do texto */
+    border: 1px solid #dcdce6;      /* borda de 1px sólida (absoluta) com cor */
+    border-radius: 8px;     /* cantos arredondados */
+    padding: 16px 24px;    /* padding superior e inferior de 16px e os laterais são de 24px */
+    line-height: 24px;  /* altura da linha da escrita de 24 px */
+}
+
+.button {           /* para todos os botões com classe button */
+    width: 100%;    /* largura máxima disponível */
+    height: 60px;   /* altura */
+    background: #e02041;    /* cor de fundo */
+    border: 0;      /* sem borda */
+    border-radius: 8px;     /* borda arredondada */
+    color: #ffffff;     /* cor do texto no botão */
+    font-weight: 700;       /* grossura da fonte no botão */
+    margin-top: 16px;       /* borda superior */
+    display: inline-block;  /* o botão fica como um blocão na linha mesmo absoluto */
+    text-align: center;     /* texto centralizado */
+    text-decoration: none;  /* texto sem decoração mt macho */
+    font-size: 18px;        /* tamanho da fonte */
+    line-height: 60px;      /* altura da linha do texto */
+    transition: filter 0.2s;    /* tempo pro filter ser aplicado -- transição suavizada pra ele só n ficar mais escuro do nada fodase */
+}
+
+.button:hover {     /* efeito quando o mouse tá em cima do botão */
+    filter: brightness(85%);    /* o botão escurece 10% */
+}
+
+.back-link {      /* fazer a estilização dos textos que tem className = "back-link" */
+    display: flex;       /* isso aqui facilita umas centralização, solta ele e o faz ser relativo não sei mas ser flex é bom */
+    align-items: center;    /* centraliza verticalmente */
+    margin-top: 40px;       /* margem superior */
+    color: #41414d;         /* cor do texto */
+    font-size: 18px;        /* tamanho da fonte */
+    text-decoration: none;      /* sem decoração de texto pq semo home */
+    font-weight: 700;      /* grossura da fonte 700 (bold) */
+    transition: opacity 0.2s;       /* tempo de duração na transição pro efeito opacity não ficar muito seco */
+}
+
+.back-link:hover {    /* efeito quando o mouse está em cima do texto */
+    opacity: 0.8;       /* opacidade cai pra 0.8 (80%) */
+}
+
+.back-link svg {       /* ícones de logon e register */
+    margin-right: 8px;      /* margem direita */
+}

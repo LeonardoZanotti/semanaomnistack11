@@ -1,0 +1,26 @@
+.logon-container {      /* div com className = "logon-container" */
+    width: 100%;        /* ocupar 100% da largura disponível */
+    max-width: 1120px;  /* largura máxima com margin e padding */
+    height: 100vh;      /* 1vh é altura ocupando 1% da altura disponível, 100vh é ocupando toda a altura disponível */
+    margin: 0 auto;     /* Sem margem e centralizado automático */
+
+    display: flex;              /* solta o display, deixando ele flexível permitindo facilidade em centralizações (as duas parada de baixo ae) e também organiza um ao lado do outro */
+    /* flex-direction: column;  /*   muda a orientação do flex, desse modo os items ficam um em cima do outro */
+    align-items: center;        /* centralização vertical */
+    justify-content: space-between;    /* vai separar a imagem do formulário lateralmente */
+}
+
+.logon-container section.form {     /* dentro da div tem o section com classe "form" */
+    width: 100%;           /* ocupar 100% da largura disponível */
+    max-width: 350px;       /* largura máxima com margin e padding */
+    margin-right: 30px;     /* margem direita de 30 px */
+}
+
+.logon-container section.form form {    /* dentro da div tem o section com classe "form" e dentro do section tem o form */
+    margin-top: 100px;      /* margem de cima */
+}
+
+.logon-container section.form form h1 {     /* título h1 dentro do formulário */
+    font-size: 32px;            /* tamanho da fonte */
+    margin-bottom: 32px;        /* margem inferior */
+}
