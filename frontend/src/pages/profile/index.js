@@ -76,7 +76,7 @@ function Profile() {        // função Profie
                         <FiTrash2 size = {20} color = "#a8a8b3" />      {/* Usa o ícone importado */}
                     </button>
                 </li>
-                ))};
+                ))}
             </ul>
         </div>
     );

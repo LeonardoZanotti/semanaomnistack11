@@ -19,6 +19,21 @@ function NewIncident () {   /* função de novo incidente */
     async function handleNewIncident(e) {     // função para cadastrar novos incidentes
         e.preventDefault();     // evento para prevenir o comportamento padrão de recarregar a página após o submit
         
+        if (title.length === 0) {      // título não pode ficar em branco
+            alert('Por favor informe o título do caso.');      // alerta pra falar pra por o título
+            return;     // voltar
+        }
+
+        if (description.length === 0) {     // descrição não pode ficar em branco
+            alert('Sua descrição deve ter entre 1 e 500 caracteres.');      // alerta pra falar pra por uma descrição
+            return;     // voltar
+        }
+
+        if (isNaN(value) || value.length === 0 || value.length > 10) {       // verifica se o valor is Not a Number (se tiver "-" ou "+" o número vai passar!!, n tem como tirar isso) ou se é 0 ou se é maior que 1 bilhão de reais
+            alert('Insira um valor entre 0 e 9999999999 usando apenas números.')     // se for isso aí, vai avisar pro cara informar o valor direito
+            return;     // e vai voltar
+        }
+
         const data = {  // define data como um json com os dados do caso a ser cadastrado
             title,
             description,
@@ -56,18 +71,21 @@ function NewIncident () {   /* função de novo incidente */
                 <form>  {/* Formulário de cadastro */}
                     <input
                         placeholder = "Título do caso"
+                        maxLength = "60"    /* limita a 60 caracteres */
                         value = {title}     /* Valor que se pega aqui é o title, por enquanto value é o '' do useState */
                         onChange = {e => setTitle(e.target.value)}      /* quando value mudar, chama o evento e numa arrow function que usa a função setTitle, que por sua vez seta title como value que é o título do caso */
                     />   {/* Input do título do caso com texto no fundo "Título do caso" */}
-                    
+
                     <textarea
                         placeholder = "Descrição"
+                        maxLength = "500"       /* limita a 500 caracteres */
                         value = {description}       /* Valor que se pega aqui é o description, por enquanto value é o '' do useState */
                         onChange = {e => setDescription(e.target.value)}    /* quando value mudar, chama o evento e numa arrow function que usa a função setDescription, que por sua vez seta description como value que é a descrição do caso */
                     />   {/* Área de texto para descrever o caso com texto no fundo "Descrição */}
                     
                     <input
-                        placeholder = "Valor em reais"
+                        placeholder = "Valor em reais (apenas números)"
+                        type = "number"     /* apenas números podem ser inseridos, apesar de que pode ter "-" e "+" */
                         value = {value}         /* Valor que se pega aqui é o value, por enquanto value é o '' do useState */
                         onChange = {e => setValue(e.target.value)}             /* quando value mudar, chama o evento e numa arrow function que usa a função setValue, que por sua vez seta value como value que é o valor do caso */
                     />   {/* input do valor com texto no fundo "Valor em reais" */}

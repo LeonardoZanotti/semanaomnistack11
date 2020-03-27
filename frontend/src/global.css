@@ -80,3 +80,17 @@ form textarea {        /* todo textarea de formulário vai ser desse jeito */
 .back-link svg {       /* ícones de logon e register */
     margin-right: 8px;      /* margem direita */
 }
+
+
+/* isso aqui é pra tirar as flechinhas que ficam nos inputs type number nos navegadores */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* tirar as flechinhas no firefox */
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

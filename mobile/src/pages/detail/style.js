@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';  // define StyleSheet que é a funç�
 import Constants from 'expo-constants'; // importa umas constantes do celular para ajudar a definir o tamanho das parada, tipo o tamanho da barra de status
 
 export default StyleSheet.create({  // Cria uma área pra poder estilizar as parada e exporta as estilização
+    detailList: {     // estilizar a lista de detalhes lá
+        marginTop: 32   // margem superior
+    },
+
     container: {        // View geral de tudo
         flex: 1,        // ocupa a tela toda
         paddingHorizontal: 24,      // espaçamento interno apenas nas laterais (tipo um padding: 0, 24)
