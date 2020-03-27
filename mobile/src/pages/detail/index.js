@@ -94,6 +94,7 @@ export default function Detail() {     // função de detalhes definida e export
     );
 };
 
+// ScrollView cria uma área scrollável, como tá em volta de tudo, tudo pode sofrer scroll
 // View container
 // View do cabeçalho
 // Image para a logo
