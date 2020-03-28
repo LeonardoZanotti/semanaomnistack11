@@ -1,5 +1,6 @@
 const express = require('express');     // chama a framework express
 const cors = require('cors');           // chama a framework cors
+const { errors } = require('celebrate');    // chama error da framework de validação do express
 
 const app = express();      // Criando um aplicavo web
 const routes = require('./routes.js');      // importar a variável routes
@@ -7,7 +8,7 @@ const routes = require('./routes.js');      // importar a variável routes
 app.use(cors());            // o aplicativo vai usar cors('site que a aplicação tá hospedada') daí é meio q uma segurança pra só dar pra acessar pelo site, mas por enquanto não precisa
 app.use(express.json());    // Faz com que as requisições que retornam .json sejam entendíveis pelo javascript, daí dá pra fazer o POST/PUT sem retornar undefined
 app.use(routes);            // Usar as rotas declaradas em routes.js
-
+app.use(errors());      // o aplicativo vai usar a função errors que converte os erros obtidos pra uma parada melhor, tipo se tua app recebe código 500 que derruba teu app, ela só vai identificar o erro e mostrar um log dale
 
 /*
     Métodos HTTP (app.[método]):
@@ -37,7 +38,4 @@ app.use(routes);            // Usar as rotas declaradas em routes.js
 */
 
 
-
-
-
-app.listen(3333);                               // o aplicativo vai ouvir a porta 3333, que pode ser acessada pelo navegador no link: 'localhost:3333'
+module.exports = app;       // exporta o app

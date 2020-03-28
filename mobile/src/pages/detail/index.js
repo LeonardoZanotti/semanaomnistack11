@@ -21,7 +21,7 @@ export default function Detail() {     // função de detalhes definida e export
     };
 
     function sendMail() {       // função para enviar email
-        if (incident.email.length === 0) {      // se não tiver um email cadastrado
+        if (incident.email === "x@x.com") {      // se o email for aquele padrão pra quando não é informado email
             alert('A ONG não possui contato via email');        // avisa que a ong n tem email
             return;     // voltar
         };
@@ -34,7 +34,7 @@ export default function Detail() {     // função de detalhes definida e export
     };
 
     function sendWhatsapp() {       // função pra enviar um zap
-        if (incident.whatsapp.length === 0) {       // se a ONG n tiver zap
+        if (incident.whatsapp === "0") {       // se o número do zap for "0" que é o padrão pra quando não tem zap
             alert('A ONG não possui contato via whatsapp');     // avisa que n tem zap n
             return;     // voltar
         };

@@ -10,5 +10,5 @@ exports.up = function(knex) {               // knex é uma ferramenta usada para
 };
 
 exports.down = function(knex) {             // se não der certo de upar a tabela:
-  knex.schema.dropTable('ongs');            // apaga tudo da tabela
+  return knex.schema.dropTable('ongs');            // apaga tudo da tabela
 };

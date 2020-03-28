@@ -1,5 +1,5 @@
 const connection = require('../database/connections.js') // Requerindo o banco de dados mesmo, daí é só inserir os dados nessa variável dale
-const crypto = require('crypto');     // gerador de caracteres aleatórios juntos
+const generateUniqueId = require('../utils/generateuniqueid');  // importa a função de gerar id único
 
 module.exports = {
     async list(request, response) {         // listagem das ongs
@@ -12,7 +12,7 @@ module.exports = {
         const { name, email, whatsapp, city, uf } = request.body;       // dados que a ong vai inserir serão armazenados nessas 5 variáveis
         // console.log(data);                                      // se quiser testar o json que ele retorna
     
-        const id = crypto.randomBytes(4).toString('HEX');       // id da ong sendo gerada pelo crypto num código de 4 bytes e depois convertido em hexadecimal
+        const id = generateUniqueId();  // o id é igual a função de gerar id único, ou seja, a função vai gerar um id único que será armazenado no 'id'
         
         await connection('ongs').insert({             // inserindo esses valores aí na tabela ongs
             id,

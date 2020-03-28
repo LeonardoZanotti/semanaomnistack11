@@ -7,11 +7,11 @@ import logoImg from '../../assets/logo.svg';        // importa a logo
 import api from '../../services/api.js';        // importa a api http
 
 function Register() {       // função Register
-    const [name, setName] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
-    const [email, setEmail] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
-    const [whatsapp, setWhatsapp] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
-    const [city, setCity] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
-    const [uf, setUf] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
+    let [name, setName] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
+    let [email, setEmail] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
+    let [whatsapp, setWhatsapp] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
+    let [city, setCity] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
+    let [uf, setUf] = useState('')    // useState é um input de text que retorna um array com dois itens: o valor da variável e a função para atualizar ela, como passamos input '' a variável inicial não possui valor
     
     const history = useHistory();   // define history como a função useHistory
 
@@ -21,17 +21,25 @@ function Register() {       // função Register
         if (name.length === 0 || name.length > 100) {       // nome só pode ter entre 1 e 100 caracteres
             alert('Você deve informar o nome da sua ONG usando menos de 100 caracteres (se o nome ultrapassa o limite informe apenas a sigla).');   // aviso sobre o nome
             return;     // voltar
-        }
+        };
 
         if (whatsapp.length === 0 && email.length === 0) {      // se o usuário não informar nem whats nem email
             alert('Insira ao menos um meio de contato (email ou whatsapp).');    // avisa pra informar pelo menos um dos dois
             return;     // voltar
-        }
+        };
 
         if(whatsapp.length > 15) {  // se o zap tiver mais de 15 números
             alert('Insira um número de whatsapp válido.');  // insere um zap decente né man
             return;     // voltar
         };
+
+        if(whatsapp.length === 0) { // se não informar o zap
+            whatsapp = 0;       // zap vai ser igual a "0"
+        };
+
+        if(email.length === 0) {    // se não informar email
+            email = "x@x.com";      // email vai ser x@x.com
+        }
 
         if (city.length === 0) {        // se ele não informar a cidade
             alert('Insira a cidade.');       // avisa pra informar a cidade
@@ -41,9 +49,9 @@ function Register() {       // função Register
         if (uf.length === 0 || uf.length === 1) {      // não permitir que o usuário não informe a UF ou informe errado
             alert('insira uma UF válida.');   // avisa ele pra por uma UF direito
             return;     // voltar
-        }
+        };
 
-        const data = {      /* Define o array data que vai armazenar as cinco variáveis do cadastro de ongs */
+        let data = {      /* Define o array data que vai armazenar as cinco variáveis do cadastro de ongs */
             name,
             email,
             whatsapp,
